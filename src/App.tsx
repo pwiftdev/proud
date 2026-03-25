@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { gsap, ScrollTrigger } from '@/lib/motion'
 
-const CONTRACT_ADDRESS = 'PASTE_CONTRACT_ADDRESS_HERE'
+const CONTRACT_ADDRESS = 'GVKuQsn1aYTRn9G44jwGTQzakEscj3vgCJdLDzUApump'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
