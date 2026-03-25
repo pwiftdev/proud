@@ -368,7 +368,7 @@ function App() {
                   <h1 className="comic-header__title">We are PROUD of..</h1>
                 </div>
                 <div className="comic-header__actions">
-                  <a className="comic-header__button comic-header__button--x" href="https://x.com/" target="_blank" rel="noreferrer" aria-label="Visit X profile">
+                  <a className="comic-header__button comic-header__button--x" href="https://x.com/i/communities/2036871646489833823/" target="_blank" rel="noreferrer" aria-label="Visit X community">
                     <svg className="comic-header__x-icon" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M18.244 2h3.308l-7.227 8.26L22.8 22h-6.637l-5.196-6.79L4.997 22H1.688l7.73-8.835L1.2 2h6.806l4.697 6.204L18.244 2Zm-1.16 18h1.833L7.01 3.895H5.043L17.084 20Z" fill="currentColor" />
                     </svg>
@@ -379,7 +379,32 @@ function App() {
                 </div>
               </header>
 
-              <section className="sky-transition-spacer" aria-hidden="true" role="presentation">
+              <section className="sky-transition-spacer" role="presentation">
+                <motion.div
+                  className="meme-stack"
+                  variants={{ show: { transition: { staggerChildren: 0.15, delayChildren: 0.6 } } }}
+                  initial="hidden"
+                  animate="show"
+                >
+                  {[
+                    { src: '/fail1.png', cls: 'meme-stack__card meme-stack__card--1' },
+                    { src: '/fail2.png', cls: 'meme-stack__card meme-stack__card--2' },
+                    { src: '/fail4.png', cls: 'meme-stack__card meme-stack__card--4' },
+                    { src: '/fail3.png', cls: 'meme-stack__card meme-stack__card--3' },
+                  ].map((m) => (
+                    <motion.img
+                      key={m.src}
+                      className={m.cls}
+                      src={m.src}
+                      alt=""
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.6, y: 80 },
+                        show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+                      }}
+                    />
+                  ))}
+                </motion.div>
+
                 <div className="scroll-indicator">
                   <span className="scroll-indicator__text">Scroll down</span>
                   <span className="scroll-indicator__arrow">
